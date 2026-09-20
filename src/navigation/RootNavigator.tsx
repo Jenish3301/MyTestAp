@@ -10,9 +10,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from '../context/ThemeContext';
 
 // Screen imports
-import HomeScreen from '../screens/HomeScreen';
-import ListingScreen from '../screens/ListingScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import { HomeScreen } from '../screens/Home';
+import { ListingScreen } from '../screens/Listing';
+import { SettingsScreen } from '../screens/Settings';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

@@ -13,7 +13,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 // Context and Navigation imports
 import { ThemeProvider, useTheme } from './src/context/ThemeContext';
 import { RootNavigator } from './src/navigation/RootNavigator';
-import SplashScreen from './src/screens/SplashScreen';
+import { SplashScreen } from './src/screens/Splash';
 
 function AppContent() {
   const { isDarkMode } = useTheme();

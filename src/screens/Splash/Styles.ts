@@ -1,41 +1,6 @@
-// React and React Native imports
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from "react-native";
 
-// Safe Area imports
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
-const Splash = () => {
-  const insets = useSafeAreaInsets();
-
-  return (
-    <View
-      style={[
-        styles.container,
-        {
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        },
-      ]}
-    >
-      <View style={styles.logoContainer}>
-        <View style={styles.logoOuter}>
-          <View style={styles.logoInner}>
-            <Text style={styles.logoMark}>MT</Text>
-          </View>
-          <View style={styles.accentOne} />
-          <View style={styles.accentTwo} />
-        </View>
-        <Text style={styles.title}>MyTestAp</Text>
-        <Text style={styles.subtitle}>React Native Practical Task</Text>
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -106,5 +71,3 @@ const styles = StyleSheet.create({
     letterSpacing: 0.6,
   },
 });
-
-export default Splash;
