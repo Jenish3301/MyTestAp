@@ -2,6 +2,7 @@
 import React from 'react';
 import {
   ActivityIndicator,
+  Image,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -39,8 +40,10 @@ interface HomeComponentProps {
   loading: boolean;
   insets: any;
   colors: any;
+  selectedImage: string | null;
   requestGalleryPermission: () => void;
   fetchDeviceDetails: () => void;
+  removeSelectedImage: () => void;
 }
 
 const HomeComponent = ({
@@ -48,8 +51,10 @@ const HomeComponent = ({
   loading,
   insets,
   colors,
-  requestGalleryPermission,
+  selectedImage,
   fetchDeviceDetails,
+  removeSelectedImage,
+  requestGalleryPermission,
 }: HomeComponentProps) => {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -147,6 +152,51 @@ const HomeComponent = ({
                 Select a photo from your phone
               </Text>
             </TouchableOpacity>
+            {selectedImage && (
+              <View
+                style={[
+                  styles.imageCard,
+                  {
+                    backgroundColor: colors.card,
+                  },
+                ]}
+              >
+                <View style={styles.imageHeader}>
+                  <Text
+                    style={[
+                      styles.imageTitle,
+                      {
+                        color: colors.text,
+                      },
+                    ]}
+                  >
+                    Selected Photo
+                  </Text>
+
+                  <TouchableOpacity
+                    onPress={removeSelectedImage}
+                    activeOpacity={0.7}
+                  >
+                    <Text
+                      style={[
+                        styles.removeText,
+                        {
+                          color: colors.danger || '#FF3B30',
+                        },
+                      ]}
+                    >
+                      Remove
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+
+                <Image
+                  source={{ uri: selectedImage }}
+                  style={styles.selectedImage}
+                  resizeMode="contain"
+                />
+              </View>
+            )}
           </>
         ) : (
           <View style={styles.errorContainer}>

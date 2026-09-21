@@ -29,6 +29,7 @@ const HomeController = () => {
     null,
   );
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     fetchDeviceDetails();
@@ -114,23 +115,29 @@ const HomeController = () => {
           return;
         }
 
-        if (response.assets?.[0]) {
-          Alert.alert(
-            'Success',
-            `Selected: ${response.assets[0].fileName || 'Photo'}`,
-          );
+        const imageUri = response.assets?.[0]?.uri;
+
+        if (imageUri) {
+          setSelectedImage(imageUri);
         }
       },
     );
   };
+
+  const removeSelectedImage = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <HomeComponent
       deviceDetails={deviceDetails}
       insets={insets}
       colors={colors}
       loading={loading}
+      selectedImage={selectedImage}
       requestGalleryPermission={requestGalleryPermission}
       fetchDeviceDetails={fetchDeviceDetails}
+      removeSelectedImage={removeSelectedImage}
     />
   );
 };

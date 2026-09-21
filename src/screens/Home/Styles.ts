@@ -143,4 +143,28 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '800',
   },
+  imageCard: {
+  marginTop: 16,
+  padding: 12,
+  borderRadius: 16,
+},
+imageHeader: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  marginBottom: 12,
+},
+imageTitle: {
+  fontSize: 16,
+  fontWeight: '700',
+},
+removeText: {
+  fontSize: 14,
+  fontWeight: '600',
+},
+selectedImage: {
+  width: '100%',
+  height: 250,
+  borderRadius: 12,
+},
 });

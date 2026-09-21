@@ -26,7 +26,9 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       ]}
     >
       <View>
-        <Text style={[styles.kicker, { color: colors.primary }]}>MyTestAp</Text>
+        <Text style={[styles.kicker, { color: colors.primary }]}>
+          MyTestApp
+        </Text>
         <Text style={[styles.title, { color: colors.text }]}>{title}</Text>
       </View>
       <TouchableOpacity

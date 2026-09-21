@@ -35,7 +35,7 @@ const SplashComponent = ({ insets }: SplashComponentProps) => {
           <View style={styles.accentOne} />
           <View style={styles.accentTwo} />
         </View>
-        <Text style={styles.title}>MyTestAp</Text>
+        <Text style={styles.title}>MyTestApp</Text>
         <Text style={styles.subtitle}>React Native Practical Task</Text>
       </View>
     </View>

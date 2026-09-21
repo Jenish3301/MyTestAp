@@ -4,7 +4,7 @@
  */
 
 export const Config = {
-  APP_NAME: 'MyTestAp',
+  APP_NAME: 'MyTestApp',
   APP_VERSION: '1.0.0',
   
   // Feature Flags
@@ -36,7 +36,7 @@ export const Config = {
   // Logging
   LOG: {
     ENABLED: true,
-    PREFIX: '[MyTestAp]',
+    PREFIX: '[MyTestApp]',
   },
 };
 
